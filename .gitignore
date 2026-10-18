@@ -1,0 +1,4 @@
+build/
+*.o
+compile_flags.txt
+.cache/
