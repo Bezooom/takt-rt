@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-test:
+    name: build + tests (plain, ASan/UBSan, TSan)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: g++ --version
+      - name: Build (-Werror)
+        run: make all
+      - name: Tests (plain)
+        run: ./build/test_plain
+      - name: Tests (ASan + UBSan)
+        run: ./build/test_asan
+      - name: Tests (TSan)
+        run: setarch "$(uname -m)" -R timeout 120 ./build/test_tsan
