@@ -1,4 +1,54 @@
-# ТАКТ — детерминированное ядро реального времени: zero-allocation планировщик и парсер бинарного протокола (C++20)
+<a id="readme-top"></a>
+<!-- best-readme-template -->
+<div align="center">
+
+<h1 align="center">ТАКТ — детерминированное ядро реального времени: zero-allocation планировщик и парсер бинарного протокола (C++20)</h1>
+
+<p align="center">
+  Детерминированный планировщик реального времени и zero-allocation парсер бинарного протокола на C++20: lock-free SPSC, CRC-16, ASan/UBSan/TSan в CI.
+  <br />
+  <br />
+  <a href="https://github.com/Bezooom/takt-rt/tree/HEAD/docs"><strong>Документация »</strong></a> · <a href="https://github.com/Bezooom/takt-rt/issues/new?labels=bug">Сообщить об ошибке</a> · <a href="https://github.com/Bezooom/takt-rt/issues/new?labels=enhancement">Предложить улучшение</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Bezooom/takt-rt/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Bezooom/takt-rt/ci.yml?style=for-the-badge&label=CI&logo=githubactions&logoColor=white" alt="CI" /></a>
+  <a href="https://github.com/Bezooom/takt-rt/blob/HEAD/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" /></a>
+  <a href="https://github.com/Bezooom/takt-rt/stargazers"><img src="https://img.shields.io/github/stars/Bezooom/takt-rt?style=for-the-badge" alt="Stars" /></a>
+  <a href="https://github.com/Bezooom/takt-rt/commits"><img src="https://img.shields.io/github/last-commit/Bezooom/takt-rt?style=for-the-badge" alt="Last commit" /></a>
+  <a href="https://github.com/Bezooom/takt-rt/issues"><img src="https://img.shields.io/github/issues/Bezooom/takt-rt?style=for-the-badge" alt="Issues" /></a>
+</p>
+
+</div>
+
+<details open>
+<summary><b>📑 Содержание</b></summary>
+
+- [📖 О проекте](#-о-проекте)
+- [Результаты (полный лог — в docs/VERIFICATION.md)](#результаты-полный-лог--в-docsverificationmd)
+- [Мотивация](#мотивация)
+- [🧱 Технологии (Built With)](#-технологии-built-with)
+- [Быстрый старт](#быстрый-старт)
+- [Задача](#задача)
+- [Архитектура](#архитектура)
+- [Как это работает (выжимка)](#как-это-работает-выжимка)
+- [Производительность](#производительность)
+- [Документация](#документация)
+- [Структура](#структура)
+- [Честные ограничения](#честные-ограничения)
+- [Воспроизводимость](#воспроизводимость)
+- [Происхождение](#происхождение)
+- [References](#references)
+- [🗺️ Дорожная карта](#-дорожная-карта)
+- [🤝 Участие в разработке](#-участие-в-разработке)
+- [Лицензия](#лицензия)
+- [🌍 English summary](#-english-summary)
+- [📬 Контакты](#-контакты)
+- [🙏 Благодарности](#-благодарности)
+
+</details>
+
+## 📖 О проекте
 
 > **Серия «Матчасть»** — ответ на «Матчасти нет / это программно невозможно».
 > Две половины доказательства: **ТАКТ** — системное ядро (эта задача),
@@ -54,6 +104,15 @@ Strata (квантованный Qwen, IQ3) на не самом дорогом 
 - облачные API физически недоступны → весь цикл (код, сборка, верификация) локальный;
 - требования промышленного уровня: детерминизм, отсутствие аллокаций в горячем
   пути, корректные барьеры памяти, валидация каждого байта линии связи.
+
+## 🧱 Технологии (Built With)
+
+<p>
+<img src="https://img.shields.io/badge/C%2B%2B-20-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+<img src="https://img.shields.io/badge/GCC-13%2B-A42E2B?style=for-the-badge&logo=gnu&logoColor=white" alt="GCC" />
+<img src="https://img.shields.io/badge/Make-build-427819?style=for-the-badge&logo=gnu&logoColor=white" alt="Make" />
+<img src="https://img.shields.io/badge/Sanitizers-ASan%20UBSan%20TSan-6E40C9?style=for-the-badge" alt="Sanitizers" />
+</p>
 
 ## Быстрый старт
 
@@ -187,6 +246,42 @@ OBB slab, вырожденная ветка S-curve, несуществующи�
 - Rock, G. *CRC RevEng catalogue* — параметры CRC-16/CCITT-FALSE.
 - Pinedo, M. *Scheduling: Theory, Algorithms, and Systems* — Job-Shop.
 
+## 🗺️ Дорожная карта
+
+- [ ] Первый релиз v0.1.0
+- [ ] Замеры задержки цикла планировщика в CI
+
+Полный список задач и идей — в [issues](https://github.com/Bezooom/takt-rt/issues).
+
+## 🤝 Участие в разработке
+
+Вклад в проект приветствуется. Если есть идея, как сделать лучше, откройте issue или pull request:
+
+1. Сделайте форк репозитория
+2. Создайте ветку (`git checkout -b feature/my-idea`)
+3. Сделайте коммит (`git commit -m 'feat: my idea'`)
+4. Отправьте ветку (`git push origin feature/my-idea`)
+5. Откройте pull request
+
 ## Лицензия
 
 MIT — см. [LICENSE](LICENSE).
+
+## 🌍 English summary
+
+Deterministic real-time core in C++20: a zero-allocation scheduler and binary protocol parser for a shop-floor cell (3 robot arms, 2 CNC machines). Lock-free SPSC queue, CRC-16-CCITT with byte-level resync, jerk-limited S-curve trajectories, zone conflict resolution without stopping the loop. `make run` builds with `-Werror` and runs plain, ASan+UBSan and TSan test binaries; the same runs in GitHub Actions. Written with a local coding model (Strata) on own hardware — see docs/LOCAL-MODEL.md.
+
+## 📬 Контакты
+
+**Павел Наумов** (Bezooom) — [naumovai.ru](https://naumovai.ru) · [X @Bezooooom](https://x.com/Bezooooom) · naumov122@gmail.com
+
+Проект: [https://github.com/Bezooom/takt-rt](https://github.com/Bezooom/takt-rt)
+
+## 🙏 Благодарности
+
+- [ИГНИЦИЯ / ignition-solver](https://github.com/Bezooom/ignition-solver) — вторая половина серии «Матчасть»
+- Санитайзеры GCC: AddressSanitizer, UndefinedBehaviorSanitizer, ThreadSanitizer
+- [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+- [Shields.io](https://shields.io)
+
+<p align="right">(<a href="#readme-top">наверх</a>)</p>
