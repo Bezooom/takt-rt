@@ -12,6 +12,8 @@ Strata (квантованный Qwen, IQ3) на не самом дорогом 
 
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-blue)
 ![deps](https://img.shields.io/badge/deps-stdlib%20only-informational)
+[![allocations](https://img.shields.io/badge/new%2Fmalloc%20after%20init-0-brightgreen)](https://github.com/Bezooom/takt-rt/actions/workflows/ci.yml)
+[![sanitizers](https://img.shields.io/badge/ASan%2BUBSan%2BTSan-pass-green)](https://github.com/Bezooom/takt-rt/actions/workflows/ci.yml)
 [![CI](https://github.com/Bezooom/takt-rt/actions/workflows/ci.yml/badge.svg)](https://github.com/Bezooom/takt-rt/actions/workflows/ci.yml)
 ![series](https://img.shields.io/badge/%D0%A1%D0%B5%D1%80%D0%B8%D1%8F-%D0%9C%D0%B0%D1%82%D1%87%D0%B0%D1%81%D1%82%D1%8C-orange)
 ![MIT](https://img.shields.io/badge/license-MIT-yellow)
